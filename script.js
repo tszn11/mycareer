@@ -157,3 +157,10 @@ document.addEventListener("mousemove",(e)=>{
 
 // ===== INIT CONTENT =====
 updateModeContent();
+btn.addEventListener("click", () => {
+  if(lang === "ru"){
+    alert("Тестовая кнопка сработала");
+  } else {
+    alert("Test düyməsi işləyir");
+  }
+});
