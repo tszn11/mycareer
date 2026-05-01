@@ -1,0 +1,260 @@
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  font-family:'Inter',sans-serif;
+  background:#050505;
+  color:#fff;
+  overflow-x:hidden;
+}
+
+/* BG GLOW */
+.bg-glow{
+  position:fixed;
+  width:700px;
+  height:700px;
+  background:radial-gradient(circle,#ff6a00aa,transparent);
+  filter:blur(140px);
+  top:-200px;
+  left:-200px;
+  z-index:-1;
+  transition:0.2s;
+}
+
+/* HEADER */
+.header{
+  display:flex;
+  justify-content:space-between;
+  padding:30px 60px;
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: 1px;
+
+  background: linear-gradient(135deg, #ff6a00, #ffb347);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  text-shadow: 0 0 20px rgba(255, 106, 0, 0.4);
+
+  cursor: pointer;
+  transition: 0.3s;
+}
+.logo:hover {
+  transform: scale(1.05);
+  text-shadow: 0 0 30px rgba(255, 106, 0, 0.7);
+}
+@keyframes glowPulse {
+  0% { text-shadow: 0 0 10px rgba(255,106,0,0.3); }
+  50% { text-shadow: 0 0 25px rgba(255,106,0,0.6); }
+  100% { text-shadow: 0 0 10px rgba(255,106,0,0.3); }
+}
+
+.logo {
+  animation: glowPulse 3s infinite;
+}   
+
+/* LANG */
+.lang-switch{
+  position:relative;
+  display:flex;
+  width:100px;
+  background:rgba(255,255,255,0.05);
+  border-radius:12px;
+  padding:4px;
+}
+
+.lang-option{
+  flex:1;
+  text-align:center;
+  padding:8px;
+  cursor:pointer;
+  z-index:2;
+  color:rgba(255,255,255,0.6);
+  transition:0.2s;
+}
+.lang-option:hover{color:#fff}
+.lang-option.active{color:#000}
+
+.lang-indicator{
+  position:absolute;
+  top:4px;
+  left:4px;
+  width:50%;
+  height:calc(100% - 8px);
+  background:linear-gradient(135deg,#ff6a00,#ffb347);
+  border-radius:10px;
+  transition:0.3s;
+}
+
+/* MODE */
+.mode-switch{
+  position:relative;
+  display:flex;
+  width:360px;
+  margin:0 auto 40px;
+  background:rgba(255,255,255,0.05);
+  border-radius:16px;
+  padding:5px;
+}
+
+.mode-option{
+  flex:1;
+  text-align:center;
+  padding:14px;
+  cursor:pointer;
+  z-index:2;
+  font-weight:600;
+  color:rgba(255,255,255,0.6);
+  transition:0.2s;
+}
+.mode-option:hover{color:#fff}
+.mode-option.active{color:#000}
+
+.mode-indicator{
+  position:absolute;
+  top:5px;
+  left:5px;
+  width:50%;
+  height:calc(100% - 10px);
+  background:linear-gradient(135deg,#ff6a00,#ffb347);
+  border-radius:12px;
+  transition:0.3s;
+}
+
+/* HERO */
+.hero{
+  text-align:center;
+  padding:140px 20px;
+  max-width:1200px;
+  margin:auto;
+}
+
+.hero h1{
+  font-size:60px;
+  font-weight:800;
+  margin-bottom:20px;
+  transition:0.3s;
+}
+
+.hero p{
+  opacity:0.7;
+  font-size:20px;
+  transition:0.3s;
+}
+
+/* SEARCH */
+.search{
+  margin-top:40px;
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.search input{
+  padding:16px;
+  border-radius:12px;
+  border:none;
+  width:260px;
+  background:#111;
+  color:#fff;
+}
+
+.search button{
+  padding:16px 30px;
+  border-radius:12px;
+  border:none;
+  background:linear-gradient(135deg,#ff6a00,#ffb347);
+  font-weight:700;
+  cursor:pointer;
+}
+.search button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(255, 106, 0, 0.7);
+}
+
+/* CARDS */
+.jobs{
+  display:flex;
+  gap:20px;
+  justify-content:center;
+  margin-top:60px;
+  flex-wrap:wrap;
+}
+
+.card{
+  width:300px;
+  padding:30px;
+  border-radius:20px;
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(10px);
+  opacity:0;
+  transform:translateY(40px);
+  transition:0.4s;
+}
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+
+  .header {
+    padding: 20px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  /* HERO */
+  .hero {
+    padding: 80px 15px;
+  }
+
+  .hero h1 {
+    font-size: 34px;
+    line-height: 1.2;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  /* MODE SWITCH */
+  .mode-switch {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .mode-option {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  /* SEARCH */
+  .search {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .search input {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .search button {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  /* CARDS */
+  .jobs {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 320px;
+  }
+
+}
